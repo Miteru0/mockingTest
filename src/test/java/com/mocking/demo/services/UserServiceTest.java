@@ -26,7 +26,7 @@ public class UserServiceTest {
     }
 
     @Test
-    public void TestCreateUser() {
+    public void testCreateUser() {
         User user = new User();
         user.setUsername("realuser");
         user.setPassword("password");

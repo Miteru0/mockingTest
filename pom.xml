@@ -46,24 +46,6 @@
 			<artifactId>spring-boot-starter-data-mongodb</artifactId>
 		</dependency>
 
-			<!-- JUnit 5 dependency -->
-		<dependency>
-			<groupId>org.junit.jupiter</groupId>
-			<artifactId>junit-jupiter-api</artifactId>
-			<version>5.8.2</version> <!-- Update to the latest version -->
-			<scope>test</scope>
-		</dependency>
-
-		<dependency>
-			<groupId>org.junit.jupiter</groupId>
-			<artifactId>junit-jupiter-engine</artifactId>
-			<version>5.8.2</version> <!-- Update to the latest version -->
-			<scope>test</scope>
-		</dependency>
-
-	
-
-
 	</dependencies>
 
 	<build>
@@ -79,6 +61,9 @@
 				<version>3.0.0-M5</version> <!-- Update to the latest version -->
 				<configuration>
 					<useModulePath>false</useModulePath> <!-- Important for compatibility with JDK 9 and above -->
+					<includes>
+						<include>**/*Test.java</include> <!-- Match all classes ending with Test -->
+					</includes>
 				</configuration>
 			</plugin>
 			
