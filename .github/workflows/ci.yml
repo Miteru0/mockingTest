@@ -41,7 +41,7 @@ jobs:
       if: success()  # Only deploy if tests pass
       run: |
         curl https://cli-assets.heroku.com/install.sh | sh  # Install Heroku CLI
-        heroku auth:token 
+        echo "${{ secrets.HEROKU_API_KEY }}" | heroku auth:token  # Authenticate using API key
         git remote add heroku https://git.heroku.com/mockingtest.git  # Set Heroku app remote (replace 'mockingtest' with your app's name)
         git push heroku master  # Push to Heroku (use 'master' if that's your default branch)
     
