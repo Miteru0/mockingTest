@@ -17,5 +17,9 @@ public class TestController {
         return "Hello, it all still works!";
     }
     
+    @GetMapping("/test3")
+    public String testing3() {
+        return "Hello, it doesn't work anymore... ";
+    }
 
 }
