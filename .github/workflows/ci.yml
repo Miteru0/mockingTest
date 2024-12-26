@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-22.04  # Specify Ubuntu version explicitly to avoid surprises
 
     steps:
-    # Check out the repository code
+    # Step to check out the repository code
     - name: Checkout code
       uses: actions/checkout@v2
 
@@ -21,7 +21,7 @@ jobs:
         java-version: '17'
         distribution: 'adoptopenjdk'  # Use the correct JDK distribution
 
-    # Cache Maven dependencies to speed up build
+    # Cache Maven dependencies to speed up the build
     - name: Cache Maven dependencies
       uses: actions/cache@v3
       with:
