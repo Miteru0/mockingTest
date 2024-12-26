@@ -46,20 +46,22 @@
 			<artifactId>spring-boot-starter-data-mongodb</artifactId>
 		</dependency>
 
-		<!-- JUnit 5 dependency -->
-    <dependency>
-        <groupId>org.junit.jupiter</groupId>
-        <artifactId>junit-jupiter-api</artifactId>
-        <version>5.8.2</version> <!-- Update to the latest version -->
-        <scope>test</scope>
-    </dependency>
+			<!-- JUnit 5 dependency -->
+		<dependency>
+			<groupId>org.junit.jupiter</groupId>
+			<artifactId>junit-jupiter-api</artifactId>
+			<version>5.8.2</version> <!-- Update to the latest version -->
+			<scope>test</scope>
+		</dependency>
 
-    <dependency>
-        <groupId>org.junit.jupiter</groupId>
-        <artifactId>junit-jupiter-engine</artifactId>
-        <version>5.8.2</version> <!-- Update to the latest version -->
-        <scope>test</scope>
-    </dependency>
+		<dependency>
+			<groupId>org.junit.jupiter</groupId>
+			<artifactId>junit-jupiter-engine</artifactId>
+			<version>5.8.2</version> <!-- Update to the latest version -->
+			<scope>test</scope>
+		</dependency>
+
+	
 
 
 	</dependencies>
@@ -70,6 +72,16 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<version>3.0.0-M5</version> <!-- Update to the latest version -->
+				<configuration>
+					<useModulePath>false</useModulePath> <!-- Important for compatibility with JDK 9 and above -->
+				</configuration>
+			</plugin>
+			
 		</plugins>
 	</build>
 
