@@ -21,12 +21,12 @@ public class UserServiceTest {
     private UserRepository userRepository;
 
     @BeforeEach
-    void setUp() {
+    public void setUp() {
         userRepository.deleteAll();
     }
 
     @Test
-    void TestCreateUser() {
+    public void TestCreateUser() {
         User user = new User();
         user.setUsername("realuser");
         user.setPassword("password");
@@ -38,7 +38,7 @@ public class UserServiceTest {
     }
 
     @Test
-    void testFindUser() {
+    public void testFindUser() {
         User user = new User();
         user.setUsername("realuser");
         user.setPassword("password");
