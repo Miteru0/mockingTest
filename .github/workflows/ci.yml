@@ -16,11 +16,11 @@ jobs:
     - name: Check out the code
       uses: actions/checkout@v2
 
-    - name: Set up Java
-      uses: actions/setup-java@v2
+    - name: Set up JDK
+      uses: actions/setup-java@v3
       with:
-        java-version: '17'  # Adjust this to your Java version
-        distribution: 'adoptopenjdk'
+        java-version: '17'  # You can specify the version you want, e.g., 11, 17, etc.
+        distribution: 'temurin'  # This is the new name for Adoptium JDK distribution
 
     - name: Cache Maven dependencies
       uses: actions/cache@v2
