@@ -52,5 +52,5 @@ jobs:
     - name: Deploy to Heroku
       run: |
         git remote get-url heroku || git remote add heroku https://git.heroku.com/mockingtest.git
-        git push heroku main  # Deploy your app
+        git push heroku master  # Deploy your app
     
