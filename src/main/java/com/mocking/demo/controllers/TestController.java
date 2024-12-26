@@ -8,8 +8,13 @@ public class TestController {
 
 
     @GetMapping("/test")
-    public String getMethodName() {
+    public String testing() {
         return "Hello, it all works!";
+    }
+
+    @GetMapping("/test2")
+    public String testing2() {
+        return "Hello, it all still works!";
     }
     
 
