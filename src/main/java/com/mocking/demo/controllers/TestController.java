@@ -22,4 +22,9 @@ public class TestController {
         return "Hello, it doesn't work anymore... ";
     }
 
+    @GetMapping("/test4")
+    public String testing4() {
+        return "Hello, jk. It still works ";
+    }
+
 }
