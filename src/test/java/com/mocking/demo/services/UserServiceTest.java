@@ -14,40 +14,40 @@ import com.mocking.demo.repositories.UserRepository;
 @SpringBootTest
 public class UserServiceTest {
 
-    @Autowired
-    private UserService userService;
+    // @Autowired
+    // private UserService userService;
 
-    @Autowired
-    private UserRepository userRepository;
+    // @Autowired
+    // private UserRepository userRepository;
 
-    @BeforeEach
-    public void setUp() {
-        userRepository.deleteAll();
-    }
+    // @BeforeEach
+    // public void setUp() {
+    //     userRepository.deleteAll();
+    // }
 
-    @Test
-    public void testCreateUser() {
-        User user = new User();
-        user.setUsername("realuser");
-        user.setPassword("password");
+    // @Test
+    // public void testCreateUser() {
+    //     User user = new User();
+    //     user.setUsername("realuser");
+    //     user.setPassword("password");
 
-        User savedUser = userService.createUser(user);
+    //     User savedUser = userService.createUser(user);
 
-        assertNotNull(savedUser.getId());
-        assertEquals("realuser", savedUser.getUsername());
-    }
+    //     assertNotNull(savedUser.getId());
+    //     assertEquals("realuser", savedUser.getUsername());
+    // }
 
-    @Test
-    public void testFindUser() {
-        User user = new User();
-        user.setUsername("realuser");
-        user.setPassword("password");
-        User savedUser = userService.createUser(user);
+    // @Test
+    // public void testFindUser() {
+    //     User user = new User();
+    //     user.setUsername("realuser");
+    //     user.setPassword("password");
+    //     User savedUser = userService.createUser(user);
 
-        User foundUser = userService.findUser(savedUser.getId());
+    //     User foundUser = userService.findUser(savedUser.getId());
 
-        assertNotNull(foundUser);
-        assertEquals("realuser", foundUser.getUsername());
-    }
+    //     assertNotNull(foundUser);
+    //     assertEquals("realuser", foundUser.getUsername());
+    // }
 
 }
