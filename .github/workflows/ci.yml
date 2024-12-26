@@ -37,11 +37,19 @@ jobs:
     - name: Run tests
       run: mvn test
 
-    - name: Deploy to Heroku
-      if: success()  # Only deploy if tests pass
+    - name: Install Heroku CLI
+      run: curl https://cli-assets.heroku.com/install.sh | sh
+
+    - name: Set Heroku API Key as Environment Variable
       run: |
-        curl https://cli-assets.heroku.com/install.sh | sh  # Install Heroku CLI
-        echo "${{ secrets.HEROKU_API_KEY }}" | heroku auth:token  # Authenticate using API key
-        git remote add heroku https://git.heroku.com/mockingtest.git  # Set Heroku app remote (replace 'mockingtest' with your app's name)
-        git push heroku master  # Push to Heroku (use 'master' if that's your default branch)
+        echo "HEROKU_API_KEY=${{ secrets.HEROKU_API_KEY }}" >> $GITHUB_ENV
+
+    - name: Authenticate with Heroku
+      run: |
+        heroku auth:token  # This should now work using the API key set above
+        heroku git:remote -a mockingtest  # Replace with your Heroku app's name
+
+    - name: Deploy to Heroku
+      run: |
+        git push heroku main  # Deploy your app
     
